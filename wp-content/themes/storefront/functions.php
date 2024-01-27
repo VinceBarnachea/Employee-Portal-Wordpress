@@ -80,7 +80,16 @@ add_action('init', 'start_session', 1);
 
 
 
+function add_style_scripts(){
+	wp_enqueue_script('my-script', get_template_directory_uri() . '/assets/js/script.js');
+}
 
+add_action('wp_enqueue_scripts', 'add_style_scripts');
+
+// add_action('init', 'custom_logout_action');
+// function custom_logout_action() {
+//     include_once(get_template_directory() . '/controllers/logout.php');
+// }
 
 // function db_connect(){
 // 	include get_template_directory() . '/controllers/connection.php';

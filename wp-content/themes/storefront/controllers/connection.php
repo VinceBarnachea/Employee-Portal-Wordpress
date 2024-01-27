@@ -34,6 +34,7 @@ if (mysqli_query($con, $tbl_user)) {
     echo "Error creating table: " . mysqli_error($con);
 }
 
+
 // The connection is successful, you can perform database operations here
 
 // ...

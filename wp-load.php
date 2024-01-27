@@ -102,4 +102,5 @@ if ( file_exists( ABSPATH . 'wp-config.php' ) ) {
 	$die .= '<p><a href="' . $path . '" class="button button-large">' . __( 'Create a Configuration File' ) . '</a></p>';
 
 	wp_die( $die, __( 'WordPress &rsaquo; Error' ) );
+	
 }

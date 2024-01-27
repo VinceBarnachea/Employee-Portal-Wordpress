@@ -35,6 +35,12 @@
         .text-blue{
             color: #4688ef;
         }
+        .bg-red{
+            background:#e02c2c;
+        }
+        .text-red{
+            color: #e02c2c;
+        }
         input{
             background: white;
         }

@@ -10,10 +10,12 @@
  * @package storefront
  */
 
-get_header(); ?>
+get_header();
+ ?>
 
 	<div class="page w-full">
 		<?php
+
 			if (is_front_page()) {
 				get_template_part('page-parts/login-page');
 			}
@@ -23,6 +25,9 @@ get_header(); ?>
 			if (is_page('user-dashboard')) {
 				get_template_part('page-parts/user-dashboard');
 			}
+			// if (is_page('logout')) {
+			// 	get_template_part('controllers/logout');
+			// }
 		?>
 	</div>
 
