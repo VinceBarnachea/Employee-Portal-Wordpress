@@ -41,6 +41,9 @@ add_action('init', 'start_session', 1);
 
 
 function add_style_scripts(){
+
+    wp_enqueue_style('custom-css', get_template_directory_uri() . '/css/custom.css');
+
 	wp_enqueue_script('my-script', get_template_directory_uri() . '/js/script.js');
 
     // wp_enqueue_script( 'ajax-script', get_template_directory_uri() . '/ajax/ajax-script.js' );

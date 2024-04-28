@@ -55,20 +55,23 @@
         </div>
 
         <div class="w-full login-form flex flex-col items-center justify-center pt-4">
-            <form class = "mb-0 w-full h-full flex flex-col justify-center items-center gap-4" action="" method="POST" autocomplete = "off">
-                <div class="user-name-container relative w-full">
-                    <label for="user_id" class="text-gray font-md">User Name:</label>
-                    <input type="text" name="user_id" id="" class = "w-full py-2 px-4 bg-white">
+            <form class = "mb-0 w-full h-full flex flex-col justify-center items-center" action="" method="POST" autocomplete = "off">
+                <div class="input-field-container relative w-full mt-6">
+                    <label for="user_id" class="text-gray-500 text-sm md:text-base absolute top-[50%] translate-y-[-50%] left-[1rem] transition-all durattion-300 ease-in-out">User Name</label>
+                    <input type="text" name="user_id" id="" class = "relative bg-transparent form-inputs w-full py-2 px-4 text-sm md:text-base border-[1px]">
                 </div>
-                <div class="user-name-container relative w-full">
-                    <label for="user_pass" class="text-gray font-md">Password:</label>
-                    <input type="password" name="user_pass" id="" class = "w-full py-2 px-4 bg-white">
-                    <div class="error-container hidden relative w-full mt-2">
-                        <h6 class="text-sm text-red font-semibold login-error-txt"></h6>
-                    </div>
+                <div class="input-field-container relative w-full mt-6">
+                    <i class="bi bi-eye absolute top-[50%] translate-y-[-50%] right-[1rem] z-[2] hover:cursor-pointer"></i>
+                    <i class="bi bi-eye-slash hidden absolute top-[50%] translate-y-[-50%] right-[1rem] z-[2] hover:cursor-pointer"></i>
+                    <label for="user_pass" class="text-gray-500 text-sm md:text-base absolute top-[50%] translate-y-[-50%] left-[1rem] transition-all durattion-300 ease-in-out">Password</label>
+                    <input type="password" name="user_pass" id="" class = "login-pass-input relative bg-transparent form-inputs w-full py-2 px-4 text-sm md:text-base border-[1px]">
                 </div>
                 
-                <div class="login-cta-btn relative w-full mt-4">
+                <div class="error-container hidden relative w-full mt-2">
+                        <h6 class="text-sm text-red font-semibold login-error-txt"></h6>
+                </div>
+                    
+                <div class="login-cta-btn relative w-full mt-8">
                     <input class="login-btn w-full bg-blue text-white py-2" name ="btnLogin" type="submit" value = "Login"></input>
                     <button class="forgot-btn w-full bg-transparent text-blue py-2 underline hover:bg-transparent hover:text-blue mt-4">Forgot Password?</button>
                 </div>

@@ -1,0 +1,8 @@
+.input-field-container label.has-value {
+    transform: translate(-0.8rem, -2.1rem);
+    font-size: 12px;
+    color: var(--black);
+    background-color: white;
+    z-index: 2;
+    padding: 0 5px;
+}
