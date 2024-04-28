@@ -1,0 +1,16 @@
+/*
+Theme Name: Employee Portal 2024
+Author: Vince
+Author URI: https://a2designlab.com/
+Description: Sole Travel Theme created by A2 Design Lab
+Version: 1.0.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+      background-color: #fff;
+  }

@@ -7,7 +7,7 @@ jQuery(document).ready(function(){
 function wrongPass(){
     $('.error-container').show();
     $('.login-cta-btn').removeClass('mt-4');
-    $('.login-error-txt').text('Wrong Email or Password');
+    $('.login-error-txt').text('Username or Password are incorrect. Please Try Again.');
 }
 
 function noInput(){
