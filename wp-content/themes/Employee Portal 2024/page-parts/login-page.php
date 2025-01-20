@@ -1,14 +1,13 @@
 <?php
     include_once(get_template_directory() . '/controllers/connection.php');
     $_SESSION['home_url'] = home_url();
-    $urlAdmin = home_url().'/admin-dashboard/';
-    $urluser = home_url().'/user-dashboard/';
+    $urlAdmin = home_url().'/dashboard/';
     if(isset($_SESSION['user_id']))
     {
         echo 'SESSION START';
         $session_user_name = $_SESSION['user_id'];
    
-        $query = "SELECT * FROM tbl_user WHERE user_id = '$session_user_name';";
+        $query = "SELECT * FROM tbl_emp WHERE user_id = '$session_user_name';";
         $result = mysqli_query($con,$query);
 
         if($result && mysqli_num_rows($result) > 0 )
@@ -29,7 +28,7 @@
                 else
                     {
                         echo '<script>
-                                                redirectTo("'.$urluser.'");
+                                                redirectTo("'.$urlAdmin.'");
                                             </script>';
                                      
                     }
@@ -87,7 +86,7 @@
                             $user_pass = $_POST['user_pass'];
                             $btnLogin = $_POST['btnLogin'];
                             if(!empty($user_name) && !empty($user_pass)){
-                                $fetchUser = "SELECT * FROM tbl_user WHERE user_id = '$user_name';";
+                                $fetchUser = "SELECT * FROM tbl_emp WHERE user_id = '$user_name';";
                                 $fetchUserResult = mysqli_query($con,$fetchUser);
                                 if($fetchUserResult && mysqli_num_rows($fetchUserResult) > 0){
                                     $user_data = mysqli_fetch_assoc($fetchUserResult);
@@ -103,7 +102,7 @@
                     
                                            
                                             echo '<script>
-                                                redirectTo("'.$urluser.'");
+                                                redirectTo("'.$urlAdmin.'");
                                             </script>';
                                             exit; // Ensure that no further code is executed after the redirect
                                         }

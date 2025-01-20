@@ -26,12 +26,12 @@ get_header(); ?>
 			if (is_front_page()) {
 				get_template_part('page-parts/login-page');
 			}
-			if (is_page('admin-dashboard')) {
-				get_template_part('page-parts/admin-dashboard');
+			if (is_page('dashboard')) {
+				get_template_part('page-parts/dashboard');
 			}
-			if (is_page('user-dashboard')) {
-				get_template_part('page-parts/user-dashboard');
-			}
+			// if (is_page('user-dashboard')) {
+			// 	get_template_part('page-parts/user-dashboard');
+			// }
 			// if (is_page('logout')) {
 			// 	get_template_part('controllers/logout');
 			// }
