@@ -6,3 +6,7 @@
     z-index: 2;
     padding: 0 5px;
 }
+
+.active-tab h2{
+    color: #9086f6;
+}

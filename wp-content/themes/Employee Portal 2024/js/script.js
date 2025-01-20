@@ -28,7 +28,12 @@ jQuery(document).ready(function(){
         jQuery('.bi-eye').show();
         jQuery('.login-pass-input').attr('type', 'password');
     });
-})
+
+    jQuery('.tab-menu').click(function(){
+        jQuery('.tab-menu').removeClass('active-tab');
+        jQuery(this).addClass('active-tab');
+    });
+}); //End of Ready function
 
 function wrongPass(){
     jQuery('.error-container').show();
