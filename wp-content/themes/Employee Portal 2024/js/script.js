@@ -29,9 +29,21 @@ jQuery(document).ready(function(){
         jQuery('.login-pass-input').attr('type', 'password');
     });
 
-    jQuery('.tab-menu').click(function(){
-        jQuery('.tab-menu').removeClass('active-tab');
-        jQuery(this).addClass('active-tab');
+    jQuery('.tab-menu').click(function (e) {
+        jQuery('.tab-menu').not(this).removeClass('active-tab').find('.dropdown-body').slideUp(); // Collapse other dropdowns
+        jQuery(this).toggleClass('active-tab'); // Toggle current tab active state
+        jQuery(this).find('.dropdown-body').slideToggle(); // 
+        // Show/hide dropdown
+        $(this).toggleClass('dropdown-expand');
+    });
+    
+    jQuery('.dropdown-body').click(function (e) {
+        e.stopPropagation(); // Prevent bubbling to the parent `.tab-menu`
+    });
+
+    jQuery('.sub-tab-menu').click(function (e){
+        jQuery('.sub-tab-menu').not(this).removeClass('sub-active-tab');
+        jQuery(this).toggleClass('sub-active-tab');
     });
 }); //End of Ready function
 

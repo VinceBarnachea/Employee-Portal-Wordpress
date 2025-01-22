@@ -5,7 +5,7 @@ include_once(get_template_directory() . '/controllers/connection.php');
     }
     $urlLogout = get_template_directory_uri().'/controllers/logout.php/';
 
-    $fetch_curr_user = "SELECT * FROM tbl_emp WHERE user_id = '{$_SESSION['user_id']}'";
+    $fetch_curr_user = "SELECT * FROM tbl_employee WHERE user_id = '{$_SESSION['user_id']}'";
     $fetch_curr_user_result = mysqli_query($con, $fetch_curr_user);
 
     if($fetch_curr_user_result && mysqli_num_rows($fetch_curr_user_result) > 0){
@@ -35,27 +35,49 @@ include_once(get_template_directory() . '/controllers/connection.php');
                 <!-- Menus -->
                  <div class="mt-12 w-full">
                     <span class="text-xs text-black">Menu</span>
-                    <div class="mt-4 flex flex-col gap-8">
-                        <div class="flex flex-row items-center gap-3 tab-menu hover:cursor-pointer transition-all duration-[300ms] ease-in-out active-tab">
-                            <img class = "object-cover aspect-[1/1] w-8 h-8" src="<?= get_template_directory_uri()?>/assets/images/img-wireframe.png" alt="" srcset="">
+                    <div class="mt-6 flex flex-col gap-8">
+                        <div class="flex flex-row items-center gap-4 tab-menu hover:cursor-pointer transition-all duration-[300ms] ease-in-out active-tab">
+                            <i class="bi bi-house text-black text-2xl flex items-center  transition-all duration-[300ms] ease-in-out"></i>
                             <h2 class="text-base text-black">Dashboard</h2>
                         </div>
 
 
                         <?php
                             if($user_level == 'admin'){ ?>
-                                <div class="flex flex-row items-center gap-3 tab-menu hover:cursor-pointer transition-all duration-[300ms] ease-in-out">
-                                    <img class = "object-cover aspect-[1/1] w-8 h-8" src="<?= get_template_directory_uri()?>/assets/images/img-wireframe.png" alt="" srcset="">
-                                    <h2 class="text-base text-black">Employees</h2>
+                                <div class="w-full flex flex-col tab-menu hover:cursor-pointer transition-all duration-[300ms] ease-in-out">
+                                    <div class="flex flex-row justify-between items-center">
+                                        <div class="w-fit flex item-center gap-4">
+                                            <i class="bi bi-people text-black text-2xl flex items-center  transition-all duration-[300ms] ease-in-out"></i>
+                                            <h2 class="text-base text-black">Employees</h2>
+                                        </div>
+                                        <i class="bi bi-chevron-down text-black text-lg flex items-center relative right-2 vertical transition-all duration-[300ms] ease-in-out"></i>
+                                    </div>
+
+                                    <div class="dropdown-body pt-4 hidden">
+                                        <div class="w-full flex flex-col gap-2">
+                                            <div class="sub-tab-menu w-fit flex item-center gap-4">
+                                                <i class="bi bi-people text-black text-2xl flex items-center invisible"></i>
+                                                <span class="text-sm text-black">Active Employees</span>
+                                            </div>
+                                            <div class="sub-tab-menu w-fit flex item-center gap-4">
+                                                <i class="bi bi-people text-black text-2xl flex items-center invisible"></i>
+                                                <span class="text-sm text-black">Manage Employees</span>
+                                            </div>
+                                            <div class="sub-tab-menu w-fit flex item-center gap-4">
+                                                <i class="bi bi-people text-black text-2xl flex items-center invisible"></i>
+                                                <span class="text-sm text-black">All Employees</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="flex flex-row items-center gap-3 tab-menu hover:cursor-pointer transition-all duration-[300ms] ease-in-out">
-                                    <img class = "object-cover aspect-[1/1] w-8 h-8" src="<?= get_template_directory_uri()?>/assets/images/img-wireframe.png" alt="" srcset="">
-                                    <h2 class="text-base text-black">Manage Payroll</h2>
+                                <div class="flex flex-row items-center gap-4 tab-menu hover:cursor-pointer transition-all duration-[300ms] ease-in-out">
+                                    <i class="bi bi-wallet2 text-black text-2xl flex items-center  transition-all duration-[300ms] ease-in-out"></i>
+                                    <h2 class="text-base text-black">Payroll</h2>
                                 </div>   
                         <?php    }else{ ?>
-                            <div class="flex flex-row items-center gap-3 tab-menu hover:cursor-pointer transition-all duration-[300ms] ease-in-out">
-                                <img class = "object-cover aspect-[1/1] w-8 h-8" src="<?= get_template_directory_uri()?>/assets/images/img-wireframe.png" alt="" srcset="">
+                            <div class="flex flex-row items-center gap-4 tab-menu hover:cursor-pointer transition-all duration-[300ms] ease-in-out">
+                                <i class="bi bi-file-earmark-spreadsheet text-black text-2xl flex items-center  transition-all duration-[300ms] ease-in-out"></i>
                                 <h2 class="text-base text-black">Payslip</h2>
                             </div>
                         <?php }
@@ -78,8 +100,8 @@ include_once(get_template_directory() . '/controllers/connection.php');
                     </div>
                  </div>
             </div> <!-- End of Menu -->
-            <button onclick="redirectTo('<?php echo $urlLogout; ?>');" class = "text-black flex items-center gap-2 justify-center w-fit">
-                <img class = "object-cover aspect-[1/1] w-6 h-6 invert filter" src="<?= get_template_directory_uri()?>/assets/images/img-wireframe.png" alt="" srcset="">
+            <button onclick="redirectTo('<?php echo $urlLogout; ?>');" class = "text-black flex items-center gap-3 justify-center w-fit">
+                <i class="bi bi-box-arrow-right text-black text-xl flex items-center"></i>
                 <h2 class="text-base">Log out</h2>
             </button>
         </div>

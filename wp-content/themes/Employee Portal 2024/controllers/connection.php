@@ -20,7 +20,7 @@ if (!$con) {
 // SQL query to create the table
 
 
-    $tbl_emp = "CREATE TABLE IF NOT EXISTS tbl_emp (
+    $tbl_emp = "CREATE TABLE IF NOT EXISTS tbl_employee (
         id INT NOT NULL AUTO_INCREMENT,
         user_level VARCHAR(255) NOT NULL,
         user_id VARCHAR(255) NOT NULL,
@@ -41,7 +41,7 @@ if (!$con) {
         PRIMARY KEY (id)
     )";
 
-    // $sqlInsert = "INSERT INTO tbl_emp (user_level, user_id, user_pass, last_name, first_name,
+    // $sqlInsert = "INSERT INTO tbl_employee (user_level, user_id, user_pass, last_name, first_name,
     // middle_name, position, gender, date_hired, emp_status, birthdate, age, contact_no, residence,
     // skype_id, email) VALUES ('user','emp','pass','Barnachea','John Vincent','Tolen',
     // 'Junior Web Developer','Male','04-20-2022','Regular','09-04-2000','24','09950990191','Tanza','live:id','vincent.barnachea@a2designlab.com');";

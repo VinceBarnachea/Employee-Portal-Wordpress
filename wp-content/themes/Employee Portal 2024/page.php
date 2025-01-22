@@ -29,12 +29,7 @@ get_header(); ?>
 			if (is_page('dashboard')) {
 				get_template_part('page-parts/dashboard');
 			}
-			// if (is_page('user-dashboard')) {
-			// 	get_template_part('page-parts/user-dashboard');
-			// }
-			// if (is_page('logout')) {
-			// 	get_template_part('controllers/logout');
-			// }
+			
 		?>
 	</div>
 

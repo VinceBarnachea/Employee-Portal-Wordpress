@@ -7,6 +7,15 @@
     padding: 0 5px;
 }
 
-.active-tab h2{
+.active-tab h2, .active-tab i{
     color: #9086f6;
+    font-weight: medium;
+}
+.sub-active-tab span, .active-tab i{
+    color: #9086f6;
+    font-weight: medium;
+}
+
+.dropdown-expand .vertical{
+    transform : rotate(180deg);
 }
